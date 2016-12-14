@@ -45,10 +45,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Rapid Waypoint System\Demo\Scripts\AgentSpawner.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Demo\Scripts\DemoCamera.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Demo\Scripts\MapGen.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Demo\Scripts\Tile.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Scripts\WaypointAgent.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Scripts\WaypointManager.cs" />
+     <Compile Include="Assets\Rapid Waypoint System\Scripts\WaypointNode.cs" />
      <Compile Include="Assets\Scripts\LevelScripts\ControlsTutorial.cs" />
      <Compile Include="Assets\Scripts\LevelScripts\HintManagement.cs" />
      <Compile Include="Assets\Scripts\LevelScripts\ThirdPersonOrbitCam.cs" />
      <Compile Include="Assets\Scripts\PlayerScripts\PlayerControl.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Scripts\DemoManager.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Scripts\MouseOrbit.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
      <Compile Include="Assets\UnityChan\Scripts\CameraController.cs" />
      <Compile Include="Assets\UnityChan\Scripts\FaceUpdate.cs" />
      <Compile Include="Assets\UnityChan\Scripts\IdleChanger.cs" />
@@ -67,6 +84,7 @@
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hair.shader" />
      <None Include="Assets\UnityChan\Stage\Shader\AlphaMask.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eyelash_blend.shader" />
+     <None Include="Assets\Sports Car Multiple textures\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada.shader" />
      <None Include="Assets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_hada_blend.shader" />
      <None Include="Assets\readme.txt" />
