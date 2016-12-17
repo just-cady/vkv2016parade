@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{8315F44A-08D4-A2C8-FCA7-6AD801494C34}") = "vkv2016parade", "Assembly-CSharp-firstpass.csproj", "{2935F53A-13E9-F889-E402-09C41FA1B6C8}"
+EndProject
 Project("{8315F44A-08D4-A2C8-FCA7-6AD801494C34}") = "vkv2016parade", "Assembly-CSharp.csproj", "{ED403417-3FD7-5E64-F091-1F9B72E7E9DD}"
 EndProject
 Project("{8315F44A-08D4-A2C8-FCA7-6AD801494C34}") = "vkv2016parade", "Assembly-CSharp-Editor.csproj", "{A181D577-5619-B0CB-CA9E-EC687856CE81}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2935F53A-13E9-F889-E402-09C41FA1B6C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2935F53A-13E9-F889-E402-09C41FA1B6C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2935F53A-13E9-F889-E402-09C41FA1B6C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2935F53A-13E9-F889-E402-09C41FA1B6C8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ED403417-3FD7-5E64-F091-1F9B72E7E9DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ED403417-3FD7-5E64-F091-1F9B72E7E9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED403417-3FD7-5E64-F091-1F9B72E7E9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
