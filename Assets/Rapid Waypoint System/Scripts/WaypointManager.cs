@@ -34,11 +34,12 @@ public class WaypointManager : MonoBehaviour {
    
     public bool looping = false;
 
-    private Transform m_spawnPoint;
+	private Transform m_spawnPoint;
 	private bool shouldClean = false;
 	private bool inRoutine = false;
 	private float intervalRate;
 	private float timeSinceLastUpdate = 0.0f;
+
 
     public int AgentQuantity { get { return objectToMove.Count; } }
     public int NodeQuantity {  get { return waypointNodes.Count; } }

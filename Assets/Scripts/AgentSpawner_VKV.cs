@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace com.kreweofvaporwave.parade
 {
-	public class AgentSpawner_VKV : MonoBehaviour {
+	public class AgentSpawner_VKV : Photon.MonoBehaviour {
 
 	    public GameObject m_agentPrefab;
 	    public int m_amountToSpawn;
@@ -16,8 +16,10 @@ namespace com.kreweofvaporwave.parade
 		// Use this for initialization
 		void Start () {
 	        m_waypointManager = GetComponent<WaypointManager>();
+			m_spawnPoint = GameObject.Find("Waypoint Spawn Point").transform;
+
 			if (PhotonNetwork.isMasterClient){
-	        	StartCoroutine(Spawn());
+				GetComponent<PhotonView>().RPC("RPCSpawn", PhotonTargets.All);
 			}
 			else {
 				Debug.Log("not master");
@@ -28,11 +30,17 @@ namespace com.kreweofvaporwave.parade
 	    {
 	        yield return new WaitForSeconds(spawnInterval);
 
-			m_waypointManager.AddEntity((GameObject)PhotonNetwork.Instantiate(m_agentPrefab.name, m_spawnPoint.position, Quaternion.identity, 0));
+			m_waypointManager.AddEntity((GameObject)PhotonNetwork.InstantiateSceneObject(m_agentPrefab.name, m_spawnPoint.position, Quaternion.identity, 0, new object[0]));
 
 	        if (m_spawned++ < m_amountToSpawn - 1 | m_infinite)
 	            StartCoroutine(Spawn());
 	    }
+
+		[PunRPC]
+		void RPCSpawn()
+		{
+			StartCoroutine(Spawn());
+		}
 
 	}
 }

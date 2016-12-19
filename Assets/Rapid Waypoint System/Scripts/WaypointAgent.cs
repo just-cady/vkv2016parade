@@ -6,7 +6,7 @@ public class WaypointAgent : MonoBehaviour {
     
     [SerializeField] protected float minAgentSpeed = 10;
     [SerializeField] protected float maxAgentSpeed = 20;
-    [SerializeField] protected WaypointManager m_waypointManager;
+	[SerializeField] protected WaypointManager m_waypointManager;
 
 	[HideInInspector] protected int currentIndex = 0;
     [HideInInspector] public GameObject currentTarget;

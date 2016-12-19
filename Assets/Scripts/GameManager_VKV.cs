@@ -76,6 +76,11 @@ namespace com.kreweofvaporwave.parade
 				
 			}
 
+			if(PhotonNetwork.isMasterClient)
+			{
+				PhotonNetwork.InstantiateSceneObject("Waypoint Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
+			}
+
 		}
 
 		/// <summary>
@@ -108,7 +113,7 @@ namespace com.kreweofvaporwave.parade
 
 				LoadArena();
 			}
-		}
+		}*/
 
 		/// <summary>
 		/// Called when a Photon Player got disconnected. We need to load a smaller scene.
@@ -120,12 +125,9 @@ namespace com.kreweofvaporwave.parade
 
 			if ( PhotonNetwork.isMasterClient ) 
 			{
-				Debug.Log( "OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient ); // called before OnPhotonPlayerDisconnected
-				
-				LoadArena();
+				//GameObject.Find("Waypoint Manager").GetPhotonView().RequestOwnership();
 			}
-		}*/
-
+		}
 		/// <summary>
 		/// Called when the local player left the room. We need to load the launcher scene.
 		/// </summary>
@@ -159,7 +161,7 @@ namespace com.kreweofvaporwave.parade
 				Debug.LogError( "PhotonNetwork : Trying to Load a level but we are not the master Client" );
 			}
 
-			Debug.Log( "PhotonNetwork : Loading Level : " + PhotonNetwork.room.PlayerCount ); 
+			//Debug.Log( "PhotonNetwork : Loading Level : " + PhotonNetwork.room.PlayerCount ); 
 
 			PhotonNetwork.LoadLevel("world_multiplayer");
 		}
