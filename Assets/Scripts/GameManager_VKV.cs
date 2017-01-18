@@ -31,6 +31,7 @@ namespace com.kreweofvaporwave.parade
 		[Tooltip("The prefab to use for representing the player")]
 		public GameObject playerPrefab;
 
+
 		#endregion
 
 		#region Private Variables
@@ -67,7 +68,7 @@ namespace com.kreweofvaporwave.parade
 					Debug.Log("We are Instantiating LocalPlayer from "+SceneManagerHelper.ActiveSceneName);
 
 					// we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
+					PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(-10f,5f,0f), Quaternion.identity, 0);
 				}else{
 
 					Debug.Log("Ignoring scene load for "+ SceneManagerHelper.ActiveSceneName);
@@ -78,7 +79,8 @@ namespace com.kreweofvaporwave.parade
 
 			if(PhotonNetwork.isMasterClient)
 			{
-				PhotonNetwork.InstantiateSceneObject("Waypoint Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
+				PhotonNetwork.InstantiateSceneObject("Parade Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
+				
 			}
 
 		}
