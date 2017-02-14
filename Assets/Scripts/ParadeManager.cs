@@ -7,7 +7,7 @@ namespace com.kreweofvaporwave.parade
 	public class ParadeManager : Photon.MonoBehaviour {
 		public string[] floats;
 		public int numberOfFloats = 1;
-		public float spawnInterval = 10.0f;
+		//public float spawnInterval = 10.0f;
 		public Transform m_spawnPoint;
 
 		// Use this for initialization
@@ -26,7 +26,7 @@ namespace com.kreweofvaporwave.parade
 			while (true){
 				Debug.Log("before");
 				PhotonNetwork.InstantiateSceneObject(floats[0], m_spawnPoint.position, Quaternion.identity, 0, new object[0]);
-				yield return new WaitForSeconds(20.0f);
+				yield return new WaitForSeconds(60.0f);
 				Debug.Log("after");
 					/*floatCount++;
 

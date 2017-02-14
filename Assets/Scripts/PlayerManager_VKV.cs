@@ -27,6 +27,7 @@ namespace com.kreweofvaporwave.parade
 
         //[Tooltip("The Player's UI GameObject Prefab")]
         //public GameObject PlayerUiPrefab;
+		public GameObject PlayerUiPrefab;
 
         //[Tooltip("The Beams GameObject to control")]
         //public GameObject Beams;
@@ -103,6 +104,15 @@ namespace com.kreweofvaporwave.parade
             {
                 Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
             }*/
+			if (this.PlayerUiPrefab != null)
+			{
+				GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
+				_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+			}
+			else
+			{
+				Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
+			}
 
             #if UNITY_MIN_5_4
             // Unity 5.4 has a new scene management. register a method to call CalledOnLevelWasLoaded.
@@ -212,6 +222,8 @@ namespace com.kreweofvaporwave.parade
 
             //GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
             //_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+			GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
+			_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
         }
 
         #endregion

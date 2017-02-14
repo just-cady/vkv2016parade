@@ -4,13 +4,15 @@
     <Files>
       <File FileName="Assets/Scripts/VideoScript.cs" Line="36" Column="82" />
       <File FileName="Assets/Scripts/Float.cs" Line="13" Column="1" />
-      <File FileName="Assets/Scripts/AgentSpawner_VKV.cs" Line="1" Column="1" />
-      <File FileName="Assets/Rapid Waypoint System/Scripts/WaypointManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager_VKV.cs" Line="52" Column="53" />
-      <File FileName="Assets/Rapid Waypoint System/Scripts/WaypointAgent.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager_VKV.cs" Line="71" Column="49" />
       <File FileName="Assets/Scripts/Launcher_VKV.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ParadeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ParadeManager.cs" Line="10" Column="5" />
       <File FileName="Assets/Photon Unity Networking/Plugins/PhotonNetwork/PhotonNetwork.cs" Line="1" Column="1" />
+      <File FileName="Assets/Photon Unity Networking/UtilityScripts/OnStartDelete.cs" Line="1" Column="1" />
+      <File FileName="Assets/Photon Unity Networking/Demos/PunBasics-Tutorial/Scripts/CameraWork.cs" Line="28" Column="30" />
+      <File FileName="Assets/Scripts/PlayerAnimatorManager_VKV.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerManager_VKV.cs" Line="115" Column="5" />
+      <File FileName="Assets/Photon Unity Networking/Demos/PunBasics-Tutorial/Scripts/PlayerManager.cs" Line="28" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
