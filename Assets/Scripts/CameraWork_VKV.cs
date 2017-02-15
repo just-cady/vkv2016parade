@@ -22,7 +22,7 @@ namespace com.kreweofvaporwave.parade
 		#region Public Properties
 
 		[Tooltip("The distance in the local x-z plane to the target")]
-	    public float distance = 7.0f;
+	    public float distance = 3.0f;
 
 		[Tooltip("The height we want the camera to be above the target")]
 	    public float height = 3.0f;
