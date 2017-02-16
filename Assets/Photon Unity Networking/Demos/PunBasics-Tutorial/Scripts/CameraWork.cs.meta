@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: fd08475b23aa548b7b9d28397d430b32
-labels:
-- ExitGames
-- PUN
+timeCreated: 1487188824
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

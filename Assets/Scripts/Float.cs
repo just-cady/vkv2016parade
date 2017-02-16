@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.AI;
 
 namespace com.kreweofvaporwave.parade {
-	public class Float : MonoBehaviour {
+	public class Float : Photon.MonoBehaviour {
 		public Transform target;
+		public GameObject throws;
+
+		public float throwForce = 4;
+		public float throwInterval = 10.0f;
+
 		NavMeshAgent agent;
 			Renderer rend;
 		// Use this for initialization
@@ -13,6 +18,7 @@ namespace com.kreweofvaporwave.parade {
 			rend = GetComponentInChildren<Renderer>();
 			target = GameObject.Find("parade end").transform;
 			agent = GetComponent<NavMeshAgent>();
+			StartCoroutine("Throw");
 
 		}
 
@@ -31,6 +37,14 @@ namespace com.kreweofvaporwave.parade {
 			}
 				
 
+		}
+
+		IEnumerator Throw () {
+			while (true){
+				yield return new WaitForSeconds(throwInterval);
+				GameObject currentThrow = (GameObject)PhotonNetwork.InstantiateSceneObject(throws.name, new Vector3 (transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity, 0, new object[0]);
+				currentThrow.GetComponent<Rigidbody>().AddForce(Vector3.left * throwForce, ForceMode.Impulse);
+			}
 		}
 	}
 }

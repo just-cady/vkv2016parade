@@ -14,6 +14,7 @@
 
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace com.kreweofvaporwave.parade
 {
@@ -27,7 +28,7 @@ namespace com.kreweofvaporwave.parade
 
         //[Tooltip("The Player's UI GameObject Prefab")]
         //public GameObject PlayerUiPrefab;
-		public GameObject PlayerUiPrefab;
+		//public GameObject PlayerUiPrefab;
 
         //[Tooltip("The Beams GameObject to control")]
         //public GameObject Beams;
@@ -44,6 +45,8 @@ namespace com.kreweofvaporwave.parade
 
         //True, when the user is firing
         bool IsFiring;
+
+		Text PlayerName;
 
         #endregion
 
@@ -94,6 +97,7 @@ namespace com.kreweofvaporwave.parade
                 Debug.LogError("<Color=Red><b>Missing</b></Color> CameraWork Component on player Prefab.", this);
             }
 
+			PlayerName = gameObject.GetComponentInChildren<Text>();
             // Create the UI
             /*if (this.PlayerUiPrefab != null)
             {
@@ -104,7 +108,7 @@ namespace com.kreweofvaporwave.parade
             {
                 Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
             }*/
-			if (this.PlayerUiPrefab != null)
+			/*if (this.PlayerUiPrefab != null)
 			{
 				GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
 				_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
@@ -112,6 +116,10 @@ namespace com.kreweofvaporwave.parade
 			else
 			{
 				Debug.LogWarning("<Color=Red><b>Missing</b></Color> PlayerUiPrefab reference on player Prefab.", this);
+			}*/
+
+			if (this.PlayerName != null){
+				PlayerName.text = photonView.owner.NickName;
 			}
 
             #if UNITY_MIN_5_4
@@ -222,8 +230,8 @@ namespace com.kreweofvaporwave.parade
 
             //GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
             //_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
-			GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
-			_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+			//GameObject _uiGo = Instantiate(this.PlayerUiPrefab) as GameObject;
+			//_uiGo.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
         }
 
         #endregion

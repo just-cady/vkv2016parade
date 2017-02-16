@@ -52,6 +52,8 @@ namespace com.kreweofvaporwave.parade
 		// Represents the position we are trying to reach using SmoothDamp()
 		private float targetHeight = 100000.0f;
 
+		private float scrollWheel = 0.0f;
+
 		#endregion
 
 		#region MonoBehaviour Messages
@@ -112,6 +114,14 @@ namespace com.kreweofvaporwave.parade
 		/// </summary>
 		void Apply()
 	    {
+			//Set distance with scroll wheel
+			scrollWheel = Input.GetAxis("Mouse ScrollWheel") + scrollWheel;
+
+			//Prevent negative distance (looking backwards)
+			if (scrollWheel < (distance * -1 + 0.01f)){
+				scrollWheel = distance * -1 + 0.01f;
+			}
+
 			Vector3 targetCenter = transform.position + centerOffset;
 
 	        // Calculate the current & target rotation angles
@@ -135,13 +145,15 @@ namespace com.kreweofvaporwave.parade
 	        // Set the position of the camera on the x-z plane to:
 	        // distance meters behind the target
 	        cameraTransform.position = targetCenter;
-	        cameraTransform.position += currentRotation * Vector3.back * distance;
+			cameraTransform.position += currentRotation * Vector3.back * (distance + scrollWheel );
 
 	        // Set the height of the camera
 	        cameraTransform.position = new Vector3( cameraTransform.position.x, currentHeight, cameraTransform.position.z );
 
 	        // Always look at the target	
 	        SetUpRotation(targetCenter);
+
+			//Debug.Log(scrollWheel);
 	    }
 
 	   

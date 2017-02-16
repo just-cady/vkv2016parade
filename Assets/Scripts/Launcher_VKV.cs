@@ -28,6 +28,7 @@ namespace com.kreweofvaporwave.parade
 
 		[Tooltip("The Ui Panel to let the user enter name, connect and play")]
 		public GameObject controlPanel;
+		public GameObject connecting;
 
 		[Tooltip("The Ui Text to inform the user about the connection progress")]
 		public Text feedbackText;
@@ -95,13 +96,14 @@ namespace com.kreweofvaporwave.parade
 		public void Connect()
 		{
 			// we want to make sure the log is clear everytime we connect, we might have several failed attempted if connection failed.
-			feedbackText.text = "";
+			feedbackText.text = "Connecting...";
 
 			// keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
 			isConnecting = true;
 
 			// hide the Play button for visual consistency
 			controlPanel.SetActive(false);
+			connecting.SetActive(true);
 
 			// start the loader animation for visual effect.
 			/*if (loaderAnime!=null)
