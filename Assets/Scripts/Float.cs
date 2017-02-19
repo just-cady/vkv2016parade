@@ -10,6 +10,7 @@ namespace com.kreweofvaporwave.parade {
 
 		public float throwForce = 4;
 		public float throwInterval = 10.0f;
+		public float throwDirection = 0;
 
 		NavMeshAgent agent;
 			Renderer rend;
@@ -36,15 +37,27 @@ namespace com.kreweofvaporwave.parade {
 				}
 			}
 				
+			randomize ();
 
 		}
 
 		IEnumerator Throw () {
 			while (true){
 				yield return new WaitForSeconds(throwInterval);
-				GameObject currentThrow = (GameObject)PhotonNetwork.InstantiateSceneObject(throws.name, new Vector3 (transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity, 0, new object[0]);
-				currentThrow.GetComponent<Rigidbody>().AddForce(Vector3.left * throwForce, ForceMode.Impulse);
+				GameObject currentThrow = (GameObject)PhotonNetwork.InstantiateSceneObject(throws.name, new Vector3 (transform.position.x + Random.Range(-7, 7), transform.position.y + 10 + Random.Range(-3, 3), transform.position.z), Quaternion.identity, 0, new object[0]);
+				//currentThrow.GetComponent<Rigidbody>().AddForce(Vector3.left * throwForce, ForceMode.Impulse);
+				if (throwDirection < .5) {
+					currentThrow.GetComponent<Rigidbody> ().AddForce (Vector3.left * throwForce, ForceMode.Impulse);
+				} else {
+					currentThrow.GetComponent<Rigidbody> ().AddForce (Vector3.right * throwForce, ForceMode.Impulse);
+				}
 			}
+		}
+
+		void randomize () {
+			throwForce = (Random.value * 3) + 1;
+			throwInterval = (Random.value * 2);
+			throwDirection = Random.value;
 		}
 	}
 }
