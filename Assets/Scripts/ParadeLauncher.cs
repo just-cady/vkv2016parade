@@ -20,8 +20,6 @@ public class ParadeLauncher : MonoBehaviour {
 				PhotonNetwork.InstantiateSceneObject("Parade Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
 				ParadeStarted = !ParadeStarted;
 			}
-		} else {
-			//Debug.Log ("PARADE");
 		}
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThrowCollectionScript : MonoBehaviour {
 
-	public int throwNum = 0;
+	private int throwNum = 0;
 
 	// Use this for initialization
 	void Start () {

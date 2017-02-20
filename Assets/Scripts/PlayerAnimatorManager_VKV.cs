@@ -63,7 +63,7 @@ namespace com.kreweofvaporwave.parade
             if (stateInfo.IsName("Base Layer.Run"))
             {
 				// When using trigger parameter
-                if (Input.GetButtonDown("Fire2")) animator.SetTrigger("Jump"); 
+                if (Input.GetButtonDown("Jump")) animator.SetTrigger("Jump"); 
 			}
            
 			// deal with movement
