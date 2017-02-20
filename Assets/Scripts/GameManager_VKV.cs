@@ -80,7 +80,7 @@ namespace com.kreweofvaporwave.parade
 
 			if(PhotonNetwork.isMasterClient)
 			{
-				PhotonNetwork.InstantiateSceneObject("Parade Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
+				//PhotonNetwork.InstantiateSceneObject("Parade Manager", new Vector3(0, 0, 0), Quaternion.identity, 0, new object[0]);
 				
 			}
 

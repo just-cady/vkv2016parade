@@ -32,7 +32,8 @@ namespace com.kreweofvaporwave.parade {
 				{
 					if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
 					{
-						Object.Destroy(this.gameObject);
+						//Object.Destroy(this.gameObject);
+						PhotonNetwork.Destroy(this.gameObject);
 					}
 				}
 			}
